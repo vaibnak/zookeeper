@@ -1,5 +1,12 @@
-.App {
+.title {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+}
+.App {
+  width: 90%;
+  margin: auto;
 }
 
 .App-logo {

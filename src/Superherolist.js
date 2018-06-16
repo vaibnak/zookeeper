@@ -1,11 +1,15 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {ListGroup, ListGroupItem} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap'
+
 class Superhero extends Component{
 
     Renderlist(){
-
+let counter = 0
  return    this.props.special.map((sp) => {
-       return  <li>Name = {sp.name}</li>
+    counter = counter + 1  
+    return  <ListGroupItem key={counter}>Name = {sp.name}</ListGroupItem>
         })
 
     
@@ -15,8 +19,18 @@ class Superhero extends Component{
 {
 console.log(this)
 return <div>
-<h1>Welcome to the age of superheroes</h1>
-        {this.Renderlist()}
+     <Grid>
+      <Row className = "show-grid">
+       <Col md = {4}>
+        <ListGroup>
+        {this.Renderlist()} 
+        </ListGroup>
+       </Col>
+       <Col md = {8}>
+       <h2>Details</h2>
+       </Col>
+      </Row>
+     </Grid>
 </div>
 }
 }

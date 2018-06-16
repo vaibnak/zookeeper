@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import Superhero from './Superherolist';
 
 class App extends Component {
   render() {
     return (
+      
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="App-intro">
+      <div className = "title">
+      <h1>WELCOME TO THE AGE OF SUPERHEROES</h1>
+      </div>  
+        
           <Superhero/>
-        </div>
+        
+        
       </div>
     );
   }
