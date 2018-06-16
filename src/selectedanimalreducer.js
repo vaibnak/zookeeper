@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default (state, action) => {
-  console.log("reducer_action", action),
-  console.log("reducer_state", state )
+export default (state=null, action) => {
+  switch(action.type){
+   case 'HERO_clicked':
+   console.log("payload of action: ",action.payload)
+
+  }
+  return state
 }

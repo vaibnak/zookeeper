@@ -10,7 +10,7 @@ class Superhero extends Component{
 let counter = 0
  return    this.props.special.map((sp) => {
     counter = counter + 1  
-    return  <ListGroupItem key={counter} onClick = {() => console.log("you have clicked",sp.name)}>Name = {sp.name}</ListGroupItem>
+    return  <ListGroupItem key={counter} onClick = {() => this.props.sphero(sp)}>Name = {sp.name}</ListGroupItem>
         })
 
     
@@ -41,7 +41,8 @@ return <div>
 function mapToConnect(state){
 //    console.log("store binded from conbineReducer", state)
     return{
-        special: state.men
+        special: state.men,
+        super: state.super
     }
 }
 function mapDispatchToProps(dispatch){
