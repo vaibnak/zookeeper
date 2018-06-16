@@ -2,14 +2,15 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import {Grid, Row, Col} from 'react-bootstrap'
-
+import { Selecthero } from "./Actions/actions";
+import {bindActionCreators} from 'redux';
 class Superhero extends Component{
 
     Renderlist(){
 let counter = 0
  return    this.props.special.map((sp) => {
     counter = counter + 1  
-    return  <ListGroupItem key={counter}>Name = {sp.name}</ListGroupItem>
+    return  <ListGroupItem key={counter} onClick = {() => console.log("you have clicked",sp.name)}>Name = {sp.name}</ListGroupItem>
         })
 
     
@@ -17,7 +18,7 @@ let counter = 0
 
     render()
 {
-console.log(this)
+console.log("Superherolist ",this )
 return <div>
      <Grid>
       <Row className = "show-grid">
@@ -43,6 +44,11 @@ function mapToConnect(state){
         special: state.men
     }
 }
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        sphero: Selecthero 
+    },dispatch)
+}
 
 //export default Superhero
-export default connect(mapToConnect)(Superhero);
+export default connect(mapToConnect, mapDispatchToProps)(Superhero);

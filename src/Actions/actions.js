@@ -1,9 +1,8 @@
-import React from 'react'
 
-export default () => {
-  return (
-    <div>
-      
-    </div>
-  )
+
+export function Selecthero (animal) {
+  return {
+   type: 'HERO_clicked',
+   payload: animal
+  }
 }
