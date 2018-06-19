@@ -1,0 +1,34 @@
+{
+  "Football": [
+    {
+      "id": "1",
+      "country": "france",
+      "ranking": "4",
+      "slogan": "winning is in our blood"
+    },
+    {
+      "id": "2",
+      "country": "Belgium",
+      "ranking": "7",
+      "slogan": "we never go empty handed"
+    },
+    {
+      "id": "3",
+      "country": "Russia",
+      "ranking": "2",
+      "slogan": "winning is our birth right"
+    },
+    {
+      "id": "4",
+      "country": "Brazil",
+      "ranking": "6",
+      "slogan": "Look at our history before staring us"
+    },
+    {
+      "id": "12",
+      "country": "portugal",
+      "ranking": "1",
+      "slogan": "You are made to lick our boots"
+    }
+  ]
+}
