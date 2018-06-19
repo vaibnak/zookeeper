@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
-import {Grid, Row, Col} from 'react-bootstrap'
+
 import { Selecthero } from "./Actions/actions";
 import {bindActionCreators} from 'redux';
+
 class Superhero extends Component{
 
     Renderlist(){
@@ -18,20 +19,13 @@ let counter = 0
 
     render()
 {
-console.log("Superherolist ",this )
+
 return <div>
-     <Grid>
-      <Row className = "show-grid">
-       <Col md = {4}>
+     
         <ListGroup>
         {this.Renderlist()} 
         </ListGroup>
-       </Col>
-       <Col md = {8}>
-       <h2>Details</h2>
-       </Col>
-      </Row>
-     </Grid>
+      
 </div>
 }
 }
