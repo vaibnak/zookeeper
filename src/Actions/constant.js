@@ -1,0 +1,1 @@
+export const fetch_animals = 'fetch_animals'

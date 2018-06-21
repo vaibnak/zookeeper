@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
-
-import { Selecthero } from "./Actions/actions";
+import {Button} from 'react-bootstrap'
+import { Selecthero,getanimallist } from "./Actions/actions";
 import {bindActionCreators} from 'redux';
+
 
 class Superhero extends Component{
 
@@ -19,13 +20,15 @@ let counter = 0
 
     render()
 {
+    console.log(this.props)
 
 return <div>
      
         <ListGroup>
         {this.Renderlist()} 
         </ListGroup>
-      
+        <br/>
+        <Button bsStyle="success" block onClick= {() => {this.props.getanimallist()}}>Its working</Button>
 </div>
 }
 }
@@ -41,7 +44,8 @@ function mapToConnect(state){
 }
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
-        sphero: Selecthero 
+        sphero: Selecthero, 
+        getanimallist: getanimallist
     },dispatch)
 }
 

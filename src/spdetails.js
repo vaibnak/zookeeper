@@ -22,7 +22,7 @@ class Spdetails extends Component {
           {this.props.Spd.payload.speciality}
            </Alert>
            </div>
-         <Button bsStyle="success">Its working</Button>
+         
         </div>
     )
   }
