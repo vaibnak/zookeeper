@@ -19,7 +19,9 @@ class Spdetails extends Component {
             <div>
               <Alert>
           {this.props.Spd.payload.name}<br/>
-          {this.props.Spd.payload.speciality}
+          {this.props.Spd.payload.species}<br/>
+          {this.props.Spd.payload.gender}<br/>
+          {this.props.Spd.payload.age}<br/>
            </Alert>
            </div>
          

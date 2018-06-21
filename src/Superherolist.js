@@ -7,22 +7,24 @@ import {bindActionCreators} from 'redux';
 
 
 class Superhero extends Component{
-
+componentWillMount(){
+    this.props.getanimallist()
+}
     Renderlist(){
 let counter = 0
- return    this.props.special.map((sp) => {
+ return    this.props.animallist.map((sp) => {
     counter = counter + 1  
     return  <ListGroupItem key={counter} onClick = {() => this.props.sphero(sp)}>Name = {sp.name}</ListGroupItem>
-        })
-
-    
-    }
+        } )
+}
 
     render()
 {
     console.log(this.props)
-
-return <div>
+    if(!this.props.animallist){
+        return(<div>Loading...</div>)
+    }
+    return <div>
      
         <ListGroup>
         {this.Renderlist()} 
@@ -39,7 +41,8 @@ function mapToConnect(state){
 //    console.log("store binded from conbineReducer", state)
     return{
         special: state.men,
-        super: state.super
+        super: state.super,
+        animallist: state.animallist,
     }
 }
 function mapDispatchToProps(dispatch){
