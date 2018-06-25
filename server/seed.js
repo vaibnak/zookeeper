@@ -3,7 +3,7 @@ module.exports =  function () {
     let faker = require('faker');
     let _ = require('Lodash');
     return {
-        animals: _.times(100, function (num) {
+        animals: _.times(10, function (num) {
             return {
                 id: num,
                 name: faker.name.findName(),

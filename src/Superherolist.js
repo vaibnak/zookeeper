@@ -20,7 +20,7 @@ let counter = 0
 
     render()
 {
-    console.log(this.props)
+    
     if(!this.props.animallist){
         return(<div>Loading...</div>)
     }
@@ -35,10 +35,10 @@ let counter = 0
 }
 }
 
-//console.log("store binded from conbineReducer", state)
+
 
 function mapToConnect(state){
-//    console.log("store binded from conbineReducer", state)
+
     return{
         special: state.men,
         super: state.super,
@@ -52,5 +52,5 @@ function mapDispatchToProps(dispatch){
     },dispatch)
 }
 
-//export default Superhero
+
 export default connect(mapToConnect, mapDispatchToProps)(Superhero);
