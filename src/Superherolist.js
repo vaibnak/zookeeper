@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
-import { Selecthero,getanimallist } from "./Actions/actions";
+import { Selecthero,getanimallist, Deleteanimal } from "./Actions/actions";
 import {bindActionCreators} from 'redux';
 
 
@@ -14,13 +14,19 @@ componentWillMount(){
 let counter = 0
  return    this.props.animallist.map((sp) => {
     counter = counter + 1  
-    return  <ListGroupItem key={counter} onClick = {() => this.props.sphero(sp)}>Name = {sp.name}</ListGroupItem>
+    return  <ListGroupItem key={counter} onClick = {() => this.props.sphero(sp)}>Name = {sp.name} <br/> <Button bsStyle="warning" 
+    onClick = {() => {this.deletethis(sp.id)}}>delete</Button></ListGroupItem>
         } )
+}
+
+deletethis(id){
+    console.log("identification ",id)
+    this.props.deleteanimal(id);
 }
 
     render()
 {
-    
+    console.log("props ", this.props)
     if(!this.props.animallist){
         return(<div>Loading...</div>)
     }
@@ -48,7 +54,8 @@ function mapToConnect(state){
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
         sphero: Selecthero, 
-        getanimallist: getanimallist
+        getanimallist: getanimallist,
+        deleteanimal: Deleteanimal
     },dispatch)
 }
 
