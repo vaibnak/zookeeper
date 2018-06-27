@@ -26,6 +26,7 @@ deletethis(id){
 
     render()
 {
+    
     console.log("props ", this.props)
     if(!this.props.animallist){
         return(<div>Loading...</div>)
